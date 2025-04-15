@@ -221,34 +221,52 @@ body {
     }
   }
 
-#spinButton {
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-}
-button {
-    padding: 1.3em 3em;
-    font-size: 15px;
+  #spinButton {
+    padding: 16px 40px;
+    font-size: 1.5rem;
     font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 2.5px;
-    font-weight: 500;
-    color: var(--light-text);
-    background: var(--light-accent-gradient);
+    color: #fff;
+    background: linear-gradient(135deg, #00bf72, #a8eb12);
     border: none;
-    border-radius: 45px;
-    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease 0s;
+    border-radius: 12px;
     cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+    z-index: 1;
+    transition: transform 0.2s ease-in-out;
+    animation: glowPulse 4s ease-in-out infinite;
+    box-shadow:
+      0 0 20px #00bf72,
+      0 0 40px #a8eb12,
+      inset 0 0 10px #008793;
   }
   
-button:hover {
-    background-color: var(--dark-secondary);
-    box-shadow: 0px 15px 20px rgba(36, 87, 126, 0.985);
-    color: var(--light-text);
-    transform: translateY(-7px);
+  #spinButton::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, #051937, #004d7a, #008793, #00bf72, #a8eb12);
+    filter: blur(20px);
+    z-index: -1;
+    opacity: 0.6;
+    border-radius: 12px;
+    transition: opacity 0.3s ease;
+    animation: hue-rotate 6s linear infinite;
   }
   
+  #spinButton:hover {
+    transform: scale(1.05);
+  }
+  
+  #spinButton:active {
+    transform: scale(0.95);
+    box-shadow:
+      0 0 10px #004d7a,
+      0 0 20px #008793,
+      inset 0 0 20px #00bf72;
+  }
+   
   .light-mode button {
     background: var(--dark-accent-gradient);
     color: var(--dark-text);
