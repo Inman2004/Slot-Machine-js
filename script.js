@@ -22,6 +22,7 @@ const resultDiv = document.getElementById('result');
 const balanceDisplay = document.getElementById("balanceDisplay");
 const betInput = document.getElementById("betInput");
 const linesInput = document.getElementById("linesInput");
+const controls = document.getElementById("controls");
 
 let balance = 100;
 
@@ -141,20 +142,23 @@ spinButton.addEventListener("click", () => {
         spinButton.innerText = 'Spin';
     }
     if (balance >= 80) {
-        balanceDisplay.textContent = `Balance: $${balance}`;
-        balanceDisplay.style.color = "green";
+        balanceDisplay.textContent = `${balance}`;
+        controls.style.backgroundColor = "green";
     }
     else if (balance >= 50) {
-        balanceDisplay.textContent = `Balance: $${balance}`;
-        balanceDisplay.style.color = "yellow";
+        balanceDisplay.textContent = `${balance}`;
+        controls.style.backgroundColor = "yellow";
+        controls.style.color = "black";
     }
      else if (balance >= 10){
-        balanceDisplay.textContent = `Balance: $${balance}`;
-        balanceDisplay.style.color = "orange";
+        balanceDisplay.textContent = `${balance}`;
+        controls.style.backgroundColor = "orange";
+        controls.style.color = "black";
     }
     else {
-        balanceDisplay.textContent = `Balance: $${balance}`;
-        balanceDisplay.style.color = "red";
+        balanceDisplay.textContent = `${balance}`;
+        controls.style.backgroundColor = "red";
+        controls.style.color = "white";
     }
 });
 
