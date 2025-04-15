@@ -18,13 +18,15 @@
     }
 :root {
       /* Gradient Variables - Dark Mode */
+  --lemon-gradient:linear-gradient(to right bottom, #051937, #004d7a, #008793, #00bf72, #a8eb12);
   --dark-main-gradient:radial-gradient(circle, #522377, #401c62, #2f154d, #200e39, #150026);
   --dark-accent-gradient: radial-gradient(circle at 50% 50%, #080B38 0%, #133155 100%);
   --darker-gradient:radial-gradient(circle at 50% 50%, #150026 0%, #522377 100%);
   
   /* Gradient Variables - Light Mode */
   --light-main-gradient: radial-gradient(circle, #a46fb3, #a05cb4, #9b48b5, #952fb6, #8f00b7);
-  --light-accent-gradient: radial-gradient(circle at 50% 50%, #E6F1FD 0%, #B8D4F9 100%);
+  --light-accent-gradient: radial-gradient(circle at 50% 50%, #fdfce6 0%, #f9f7b8 100%);
+  --lemon-accent-gradient: radial-gradient(circle, #051937, #004d7a, #008793, #00bf72, #a8eb12);
   
   /* Color Stops */
   --gradient-stop-1: #522377;
@@ -79,7 +81,7 @@
     color: var(--dark-text);
   }
 body {
-    background: var(--dark-main-gradient);
+    background: var(--lemon-gradient);
     font-family: 'poppins', sans-serif;
     text-align: center;
 }
@@ -185,7 +187,7 @@ body {
     white-space: nowrap;
     overflow: hidden;
     line-height: 220px;
-    color: #f0f;
+    color: rgb(255, 149, 62);
     text-shadow: 0 10px 7px rgba(0,0,0,0.4),0 -10px 1px #fff;
     letter-spacing: -3px;
   }
@@ -258,25 +260,26 @@ button:hover {
   }
 #result {
     display: block;
-    color: var(--dark-text);
+    color: var(--light-text);
     margin-left: auto;
     margin-right: auto;
     margin-top: 80px;
     font-size: 24px;
     z-index: 2;
-    background: var(--dark-main-gradient);
+    background: var(--light-accent-gradient);
     padding: 20px;
     height: fit-content;
     width: fit-content;
     border-radius: 20px;
+    border: solid 5px gold;
     align-items: center;
     justify-content: center;
     text-align: center;
     transition: all ease-out 0.2s;
     box-shadow:
-      0 0 50px #fff,
-      -10px 0 80px #f0f,
-      10px 0 80px #0ff;
+      0 0 50px #ffae00,
+      -10px 0 80px rgb(255, 204, 0),
+      10px 0 80px rgb(238, 255, 0);
     transition: color 0.5s ease;
 }
 
@@ -310,7 +313,7 @@ button:hover {
     transition: all ease-out 0.2s;
     box-shadow:
       0 0 50px #fff,
-      -10px 0 80px #f0f,
+      -10px 0 80px rgb(246, 255, 0),
       10px 0 80px #0ff;
     margin-bottom: 20px;
   }
