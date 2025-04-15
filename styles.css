@@ -209,12 +209,13 @@ button:hover {
   }
 #result {
     display: block;
+    color: var(--dark-text);
     margin-left: auto;
     margin-right: auto;
     margin-top: 80px;
     font-size: 24px;
     z-index: 2;
-    background: var(--light-main-gradient);
+    background: var(--dark-main-gradient);
     padding: 20px;
     height: fit-content;
     width: fit-content;
@@ -224,15 +225,10 @@ button:hover {
     text-align: center;
     transition: all ease-out 0.2s;
     box-shadow:
-
       0 0 50px #fff,
       -10px 0 80px #f0f,
       10px 0 80px #0ff;
     transition: color 0.5s ease;
-}
-.light-mode #result {
-    background: var(--dark-main-gradient);
-    color: var(--dark-text);
 }
 
  #balanceDisplay{
