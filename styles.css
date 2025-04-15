@@ -223,22 +223,25 @@ button:hover {
     justify-content: center;
     text-align: center;
     transition: all ease-out 0.2s;
-    background: rgba(255, 255, 255, 0.12);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-    z-index: 100;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-
+    box-shadow:
+      inset 0 0 50px #fff,
+      inset 20px 0 80px #f0f,
+      inset -20px 0 80px #0ff,
+      inset 20px 0 300px #f0f,
+      inset -20px 0 300px #0ff,
+      0 0 50px #fff,
+      -10px 0 80px #f0f,
+      10px 0 80px #0ff;
+    transition: color 0.5s ease;
 }
 .light-mode #result {
-    background: rgba(27, 0, 206, 0.145);
+
     color: var(--dark-text);
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
 }
 
+ #balanceDisplay{
+  transition: color 1s ease;
+ }
   input {
     padding: 8px;
     border-radius: 8px;
@@ -271,7 +274,26 @@ button:hover {
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     margin-bottom: 20px;
   }
-  
+  .points {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    z-index: 2;
+    background: none;
+    padding: 20px;
+    height: fit-content;
+    width: fit-content;
+    border-radius: 20px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition: all ease-out 0.2s;
+    margin-bottom: 20px;
+  }
+  .glow {
+    text-shadow: 0 0 10px #fff, 0 0 20px rgb(255, 208, 0), 0 0 30px rgb(255, 183, 0), 0 0 40px rgb(255, 164, 44), 0 0 50px rgb(255, 242, 0), 0 0 60px #fff, 0 0 70px rgb(253, 255, 147), 0 0 80px rgb(255, 253, 131);
+   }
   #result {
     margin-top: 20px;
     font-size: 20px;

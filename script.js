@@ -86,6 +86,11 @@ const updateBalanceUI = () => {
 };
 
 spinButton.addEventListener("click", () => {
+    // Reset animation by removing and re-adding the class
+    resultDiv.style.animation = "none";
+    void resultDiv.offsetWidth; // Trigger reflow to restart animation
+    resultDiv.style.animation = "glitch .3s linear";
+
     const bet = parseInt(betInput.value);
     const lines = parseInt(linesInput.value);
 
@@ -124,9 +129,9 @@ spinButton.addEventListener("click", () => {
         linesInput.disabled = true;
         balanceDisplay.textContent = 'Game Over!';
         spinButton.innerText = 'Play Again';
-        spinButton.addEventListener('click', () => {
+        spinButton.onclick = () => {
             location.reload();
-        });
+        };
         return;
     }
     else {
@@ -134,6 +139,22 @@ spinButton.addEventListener("click", () => {
         betInput.disabled = false;
         linesInput.disabled = false;
         spinButton.innerText = 'Spin';
+    }
+    if (balance >= 80) {
+        balanceDisplay.textContent = `Balance: $${balance}`;
+        balanceDisplay.style.color = "green";
+    }
+    else if (balance >= 50) {
+        balanceDisplay.textContent = `Balance: $${balance}`;
+        balanceDisplay.style.color = "yellow";
+    }
+     else if (balance >= 10){
+        balanceDisplay.textContent = `Balance: $${balance}`;
+        balanceDisplay.style.color = "orange";
+    }
+    else {
+        balanceDisplay.textContent = `Balance: $${balance}`;
+        balanceDisplay.style.color = "red";
     }
 });
 
